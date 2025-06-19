@@ -1,5 +1,5 @@
-import Home from "../home/home"
-
+import Home from '../home/home'
+import React from 'react';
 export default function Main() {
   return (
     <main>

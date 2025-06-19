@@ -1,0 +1,9 @@
+.cesta{
+position: relative;
+  background: url('../../../public/imagens/cesta.png') center no-repeat;
+}
+
+.bg-cest{
+    position: absolute;
+    top: 14px;
+}

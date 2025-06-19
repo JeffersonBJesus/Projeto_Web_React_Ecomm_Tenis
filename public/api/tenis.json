@@ -1,0 +1,137 @@
+[
+  {
+    "cod_tenis": "NKAMEX001",
+    "modelo": "Tênis Nike Air Max Excee",
+    "marca": "Nike",
+    "genero": "Masculino",
+    "categoria": "Casual",
+    "imagem": "imagens/tenis/Tênis Nike Air Max Excee.png",
+    "preco": 549.99
+  },
+  {
+    "cod_tenis": "ADULTRB002",
+    "modelo": "Tênis Adidas Ultraboost 22",
+    "marca": "Adidas",
+    "genero": "Feminino",
+    "categoria": "Esportivo",
+    "imagem": "imagens/tenis/Tênis Adidas Ultraboost 22.jpg",
+    "preco": 799.90
+  },
+  {
+    "cod_tenis": "PUMARX003",
+    "modelo": "Tênis Puma RS-X Reinvention",
+    "marca": "Puma",
+    "genero": "Unissex",
+    "categoria": "Streetwear",
+    "imagem": "imagens/tenis/Tênis Puma RS-X Reinvention.png",
+    "preco": 489.00
+  },
+  {
+    "cod_tenis": "NKBKAZ004",
+    "modelo": "Tênis Nike Blazer Mid '77 Vintage",
+    "marca": "Nike",
+    "genero": "Feminino",
+    "categoria": "Casual",
+    "imagem": "imagens/tenis/Tênis Nike Blazer Mid '77 Vintage.jpg",
+    "preco": 629.99
+  },
+  {
+    "cod_tenis": "ADFORU005",
+    "modelo": "Tênis Adidas Forum Low",
+    "marca": "Adidas",
+    "genero": "Masculino",
+    "categoria": "Streetwear",
+    "imagem": "imagens/tenis/Tênis Adidas Forum Low.png",
+    "preco": 599.90
+  },
+  {
+    "cod_tenis": "CONVCT006",
+    "modelo": "Tênis Converse Chuck 70 High Top",
+    "marca": "Converse",
+    "genero": "Unissex",
+    "categoria": "Casual",
+    "imagem": "imagens/tenis/Tênis Converse Chuck 70 High Top.png",
+    "preco": 379.90
+  },
+  {
+    "cod_tenis": "VANOAU007",
+    "modelo": "Tênis Vans Old Skool",
+    "marca": "Vans",
+    "genero": "Unissex",
+    "categoria": "Skate",
+    "imagem": "imagens/tenis/Tênis Vans Old Skool.png",
+    "preco": 329.90
+  },
+  {
+    "cod_tenis": "NKPEGZ008",
+    "modelo": "Tênis Nike Air Zoom Pegasus 39",
+    "marca": "Nike",
+    "genero": "Masculino",
+    "categoria": "Esportivo",
+    "imagem": "imagens/tenis/Tênis Nike Air Zoom Pegasus 39.png",
+    "preco": 699.99
+  },
+  {
+    "cod_tenis": "ASICGEL009",
+    "modelo": "Tênis Asics Gel-Kayano 29",
+    "marca": "Asics",
+    "genero": "Feminino",
+    "categoria": "Esportivo",
+    "imagem": "imagens/tenis/Tênis Asics Gel-Kayano 29.jpg",
+    "preco": 749.90
+  },
+  {
+    "cod_tenis": "NEWBLS010",
+    "modelo": "Tênis New Balance 574",
+    "marca": "New Balance",
+    "genero": "Unissex",
+    "categoria": "Casual",
+    "imagem": "imagens/tenis/Tênis New Balance 574.jpg",
+    "preco": 419.99
+  },
+  {
+    "cod_tenis": "ADGAZ011",
+    "modelo": "Tênis Adidas Gazelle",
+    "marca": "Adidas",
+    "genero": "Masculino",
+    "categoria": "Casual",
+    "imagem": "imagens/tenis/Tênis Adidas Gazelle.jpeg",
+    "preco": 469.90
+  },
+  {
+    "cod_tenis": "PUMASU012",
+    "modelo": "Tênis Puma Suede Classic XXI",
+    "marca": "Puma",
+    "genero": "Feminino",
+    "categoria": "Streetwear",
+    "imagem": "imagens/tenis/Tênis Puma Suede Classic XXI.jpeg",
+    "preco": 349.90
+  },
+  {
+    "cod_tenis": "NKJD1013",
+    "modelo": "Tênis Nike Air Jordan 1 Mid",
+    "marca": "Nike",
+    "genero": "Unissex",
+    "categoria": "Streetwear",
+    "imagem": "imagens/tenis/Tênis Nike Air Jordan 1 Mid.jpg",
+    "preco": 1899.99
+  },
+  {
+    "cod_tenis": "FILADI014",
+    "modelo": "Tênis Fila Disruptor II",
+    "marca": "Fila",
+    "genero": "Feminino",
+    "categoria": "Streetwear",
+    "imagem": "imagens/tenis/Tênis Fila Disruptor II.png",
+    "preco": 399.90
+  },
+  {
+    "cod_tenis": "SALXAU015",
+    "modelo": "Tênis Salomon X Ultra 4 GTX",
+    "marca": "Salomon",
+    "genero": "Masculino",
+    "categoria": "Outdoor",
+    "imagem": "imagens/tenis/Tênis Salomon X Ultra 4 GTX.png",
+    "preco": 999.90
+  }
+]
