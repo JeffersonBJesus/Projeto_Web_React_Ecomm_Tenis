@@ -1,4 +1,5 @@
 
+import './productCard.css'
 
 function ProductCard(props) {
 
@@ -7,7 +8,7 @@ function ProductCard(props) {
                 <div class="cont">
                     <div class="product-card">
                         <div class="product-card__image">
-                            <img src={props.imagem}
+                            <img src={props.img}
                                 alt="Red Nike Shoes"/>
                         </div>
                         <div class="product-card__info">

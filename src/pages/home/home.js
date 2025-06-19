@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from '../../components/card_product/productCard'
+import Carousel from '../../components/carrosel/carousel'
 
 
 export default function Home() {
@@ -22,14 +23,27 @@ export default function Home() {
   return (
     <>
       <h1>Conheça nosso Produtos</h1>
-      {
-        tenis.map(item => {
-          return (
-            <ProductCard key={item.cod_tenis}  img={item.imagem} link={`/product/${item.cod_tenis}`} nome={item.modelo}
-               product={item} price={item.preco} />
-          )
-        })
-      }
+      
+            <div class="row">
+              <div className='col-7'>
+<Carousel/>
+              </div>
+              
+            </div>
+
+
+
+      <div class="row">
+        {
+          tenis.map(item => {
+            return (
+              <ProductCard key={item.cod_tenis} img={item.imagem} link={`/product/${item.cod_tenis}`} modelo={item.modelo}
+                product={item} preco={item.preco} marca={item.marca}  />
+            )
+          })
+        }
+      </div>
+
     </>
   )
 }
