@@ -8,14 +8,13 @@ function ProductCard(props) {
                 <div class="cont">
                     <div class="product-card">
                         <div class="product-card__image">
-                            <img src={props.img}
-                                alt="Red Nike Shoes"/>
+                            <img src={props.img}/>
                         </div>
                         <div class="product-card__info">
                             <h2 class="product-card__title">{props.modelo}</h2>
                             <p class="product-card__description">{props.marca}</p>
                             <div class="product-card__price-row">
-                                <span class="product-card__price">{props.preco}</span>
+                                <span class="product-card__price">R$ {props.preco}</span>
                                 <button  class="product-card__btn">Adicionar ao Carrinho</button> 
                                 {/* onClick={ () => {}} */}
                             </div>

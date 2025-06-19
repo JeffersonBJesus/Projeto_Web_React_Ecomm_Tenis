@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from '../../components/card_product/productCard'
 import Carousel from '../../components/carrosel/carousel'
-
+import './home.css'
 
 export default function Home() {
   const [tenis, setTenis] = useState([])
@@ -22,23 +22,28 @@ export default function Home() {
 
   return (
     <>
-      <h1>Conheça nosso Produtos</h1>
-      
-            <div class="row">
-              <div className='col-7'>
-<Carousel/>
-              </div>
-              
-            </div>
+      <div class="container-fluid" >
+        <div class="one">
+          <h1>Novidades </h1>
+        </div>
+      </div>
 
-
+      <div class="container-fluid" >
+        <div class="row">
+          <Carousel />
+        </div>
+      </div>
 
       <div class="row">
+
+        <div class="one">
+          <h1>Conheça nosso catalogo</h1>
+        </div>
         {
           tenis.map(item => {
             return (
               <ProductCard key={item.cod_tenis} img={item.imagem} link={`/product/${item.cod_tenis}`} modelo={item.modelo}
-                product={item} preco={item.preco} marca={item.marca}  />
+                product={item} preco={item.preco} marca={item.marca} />
             )
           })
         }

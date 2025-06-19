@@ -1,0 +1,23 @@
+.one h1 {
+    margin-top: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  font-size: 50px;
+    font-variant: all-small-caps;
+}
+
+
+.one h1:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #b80000;
+}
+
+
