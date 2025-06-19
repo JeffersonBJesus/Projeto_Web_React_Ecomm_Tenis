@@ -1,6 +1,7 @@
 import Logo from "../logo/logo"
 import Nav from "../nav/nav"
 import React from 'react'; 
+import { NavLink} from 'react-router-dom';
 
 import './header.css'
 
@@ -17,7 +18,7 @@ export default function Header() {
           <Nav></Nav>
         </div>
        <div className="col-2 cesta">
-            <span className="badge bg-success bg-cest " > 2 </span>
+          <NavLink to="/check"><span className="badge bg-success bg-cest " > 2 </span></NavLink>
         </div>
       </div>
     </header>
