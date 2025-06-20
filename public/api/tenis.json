@@ -5,7 +5,7 @@
     "marca": "Nike",
     "genero": "Masculino",
     "categoria": "Casual",
-    "imagem": "./imagens/1.webp",
+    "imagem": "imagens/1.webp",
     "preco": 549.99
   },
   {

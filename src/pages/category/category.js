@@ -1,13 +1,44 @@
-import React from "react";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
+import ProductCard from '../../components/card_product/productCard'
+import axios from 'axios'
+export default function Category() {
+    const { buscar } = useParams()
+    const [tenis, setTenis] = useState([])
 
-const Category = () => {
+    useEffect(() => {
+        getDetails(buscar)
+    }, []);
+
+            
+    function getDetails(buscar) {
+        axios.get(`http://localhost:3000/api/tenis.json`)
+            .then((response) => {
+               setTenis(response.data.filter(i => i.categoria.toLowerCase() === buscar.toLowerCase()));
+            })
+            .catch((error) => {
+                console.error(error.messege)
+            });
+    } 
+
+    
     return (
-    <main className="principal">
-        <h2>Categoria História</h2>
-        <div className="card">
-            <p>Conteúdos da página História</p>
-        </div>
-    </main>);
+        <>
+            <div className="container-fluid">
+                <div className="row">
+                    <h3 >Filtro {buscar.toLowerCase()}</h3>
+                    {
+                        tenis
+                        .map(item => {
+                            return (
+                                <ProductCard key={item.cod_tenis} img={'../' + item.imagem} modelo={item.modelo}
+                                    product={item} preco={item.preco} marca={item.marca} />
+                            )
+                        })
+                    }
+                </div>
+            </div>
+        </>
+        
+    );
 }
-
-export default Category;

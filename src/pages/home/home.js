@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ProductCard from '../../components/card_product/productCard'
 import Carousel from '../../components/carrosel/carousel'
 import './home.css'
@@ -42,7 +42,7 @@ export default function Home() {
         {
           tenis.map(item => {
             return (
-              <ProductCard key={item.cod_tenis} img={item.imagem} link={`/product/${item.cod_tenis}`} modelo={item.modelo}
+              <ProductCard key={item.cod_tenis} img={item.imagem}  modelo={item.modelo}
                 product={item} preco={item.preco} marca={item.marca} />
             )
           })
