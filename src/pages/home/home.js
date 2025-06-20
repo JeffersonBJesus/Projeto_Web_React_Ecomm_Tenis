@@ -18,7 +18,7 @@ export default function Home() {
       .catch(error => {
         console.error('Erro ao buscar dados:', error);
       })
-  });
+  }, []);
 
   return (
     <>

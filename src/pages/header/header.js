@@ -1,12 +1,26 @@
 import Logo from "../logo/logo"
 import Nav from "../nav/nav"
-import React from 'react'; 
+import React, {useContext ,useEffect} from 'react'
 import { NavLink} from 'react-router-dom';
-
+import CartContext from '../../context/Cart.provider'
 import './header.css'
 
 
 export default function Header() {
+    const { qtyCarrinho, total } = useContext(CartContext)
+    useEffect(() => {
+
+    }, [])
+
+    var tt = null
+    function quantidade() {
+        if (qtyCarrinho === 0) {
+            return tt
+        }
+        return tt = qtyCarrinho;
+    }
+
+
   return (
     <header className="topo container-fluid" >
       <div className="row">
@@ -18,7 +32,11 @@ export default function Header() {
           <Nav></Nav>
         </div>
        <div className="col-2 cesta">
-          <NavLink to="/check"><span className="badge bg-success bg-cest " > 2 </span></NavLink>
+          <NavLink to="/check"> {
+            quantidade() != null 
+            ? <span className="badge bg-success bg-cest " >  { tt } </span>
+            : <></>
+          }</NavLink>
         </div>
       </div>
     </header>
