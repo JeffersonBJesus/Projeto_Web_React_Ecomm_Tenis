@@ -2,12 +2,13 @@ import React, { useContext, useEffect } from 'react'
 import CartContext from '../../context/Cart.provider'
 import CardCheckout from '../../components/cardCheckoutProducts/cardCheck'
 function Checkout() {
- const showPrice = (number) => {
-    let priceConverted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
-       return priceConverted
-  }
+    const showPrice = (number) => {
+        let priceConverted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
+        return priceConverted
+    }
 
     const { qtyCarrinho, valorTotal, total, listarCarrinho, carrinho } = useContext(CartContext)
+
     useEffect(() => {
         quantidade()
         listarCarrinho()
@@ -15,7 +16,7 @@ function Checkout() {
     }, [])
 
     var tt = null
-     var totalValor = 0;
+    var totalValor = 0;
     function quantidade() {
         if (qtyCarrinho == 0) {
             return tt
@@ -23,7 +24,6 @@ function Checkout() {
         return tt = qtyCarrinho;
     }
 
-   
 
     return (
         <div class="container my-5">
@@ -167,13 +167,20 @@ function Checkout() {
                 <div class="col-md-5 col-lg-4 order-md-last">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-primary">Seu Carrinho</span>
-                        <span class="badge bg-primary rounded-pill">{
+                        <span class="badge  mtr bg-primary rounded-pill">{
                             quantidade() != null
                                 ? <>{tt} </>
                                 : <></>
                         }</span>
                     </h4>
-                    <ul class="list-group mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+
+                        <ul>
+                           
+                        </ul>
+
+                    </div>
+                    <ul className="list-group mb-3">
 
                         {
                             carrinho.map(item => {
@@ -185,6 +192,7 @@ function Checkout() {
                                         marca={item.marca}
                                         preco={item.preco}
                                         tenis={item}
+                                        quant={item.quantidade}
 
                                     />
                                 )
