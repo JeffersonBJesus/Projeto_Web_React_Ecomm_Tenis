@@ -40,6 +40,19 @@ function CartProvider(props) {
     alert('Produto adicionado ao carrinho!');
 };
     
+    const comprarItemUnico = (item, quantidade, tamanho) => {
+    const itemParaComprar = {
+        ...item,
+        idCarrinho: item.cod_tenis + '-' + tamanho,
+        quantidade: quantidade,
+        tamanho: tamanho,
+    };
+    const novoCarrinho = [itemParaComprar];
+    localStorage.setItem('cart', JSON.stringify(novoCarrinho));
+    setCarrinho(novoCarrinho);
+    setQtyCarrinho(1);
+};
+
     function incrementoCarrinho(item) {
         let carrinhoLista = []
         if (localStorage.getItem('cart')) {
@@ -98,6 +111,16 @@ function CartProvider(props) {
         }
     }
 
+    function limparCarrinho() {
+        setCarrinho([]);
+        setQtyCarrinho(0);
+        setValorTotal(0);
+        localStorage.removeItem('cart');
+        localStorage.removeItem('valorTotal');
+        localStorage.removeItem('qtyCarrinho');
+        alert("Carrinho foi limpo!");
+}
+
     function decrementoQuantyProduto(item) {
         if (carrinho.find(produto => item.cod_tenis == produto.cod_tenis)) {
             decrementoCarrinho(item)
@@ -126,6 +149,7 @@ function CartProvider(props) {
         })
     }
 
+    
     const deleteCarrinho = (item) => {
         const remove = carrinho.filter(items => items.cod_tenis !== item.cod_tenis)
         localStorage.setItem("cart", JSON.stringify(remove))
@@ -151,7 +175,8 @@ function CartProvider(props) {
                 deleteCarrinho, decrementoCarrinho, incrementoCarrinho,
                 addCarrinho, quantidadeCarrinho, listarCarrinho,
                 carrinho, qtyCarrinho, quantidadeProduto, quantidadeCesta,
-                valorTotal, total, incrementoQuantyProduto, decrementoQuantyProduto
+                valorTotal, total, incrementoQuantyProduto, decrementoQuantyProduto, 
+                limparCarrinho, comprarItemUnico
             }}>
             {props.children}
         </CartContext.Provider>

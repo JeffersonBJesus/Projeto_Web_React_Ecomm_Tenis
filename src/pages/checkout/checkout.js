@@ -1,29 +1,19 @@
 import React, { useContext, useEffect } from 'react'
 import CartContext from '../../context/Cart.provider'
 import CardCheckout from '../../components/cardCheckoutProducts/cardCheck'
-function Checkout() {
- const showPrice = (number) => {
-    let priceConverted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
-       return priceConverted
-  }
+import './checkout.css'
 
-    const { qtyCarrinho, valorTotal, total, listarCarrinho, carrinho } = useContext(CartContext)
+
+function Checkout() {
+    const { qtyCarrinho, listarCarrinho, carrinho, limparCarrinho } = useContext(CartContext)
     useEffect(() => {
-        quantidade()
         listarCarrinho()
-        total()
     }, [])
 
-    var tt = null
-     var totalValor = 0;
-    function quantidade() {
-        if (qtyCarrinho == 0) {
-            return tt
-        }
-        return tt = qtyCarrinho;
-    }
+    const totalCalculado = carrinho.reduce((acumulador, item) => {
+        return acumulador + ((item.preco || 0) * (item.quantidade || 1));
+    }, 0);
 
-   
 
     return (
         <div class="container my-5">
@@ -65,7 +55,7 @@ function Checkout() {
                                 </div>
                             </div>
 
-                            <div class="col-12">
+                            <div className="col-12">
                                 <label for="address2" class="form-label">Endereço 2 <span class="text-body-secondary">(Opcional)</span></label>
                                 <input type="text" class="form-control" id="address2" placeholder="Apartamento ou suite" />
                             </div>
@@ -85,7 +75,7 @@ function Checkout() {
 
                             <div class="col-md-4">
                                 <label for="state" class="form-label">Estado</label>
-                                <select class="form-select" id="state" required>
+                                <select classN="form-select" id="state" required>
                                     <option value="">Escolha...</option>
                                     <option>São Paulo</option>
                                     <option>Rio de Janeiro</option>
@@ -164,37 +154,37 @@ function Checkout() {
                     </form>
                 </div>
 
-                <div class="col-md-5 col-lg-4 order-md-last">
-                    <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-primary">Seu Carrinho</span>
-                        <span class="badge bg-primary rounded-pill">{
-                            quantidade() != null
-                                ? <>{tt} </>
-                                : <></>
-                        }</span>
+                <div className="col-md-5 col-lg-4 order-md-last">
+                    <h4 className="d-flex justify-content-between align-items-center mb-3">
+                        <span className="text-primary">Seu Carrinho</span>
+                        <span className="badge bg-primary rounded-pill">{qtyCarrinho}</span>
                     </h4>
-                    <ul class="list-group mb-3">
 
-                        {
-                            carrinho.map(item => {
-                                totalValor += item.preco;
-                                return (
-                                    <CardCheckout
-                                        img={item.imagem}
-                                        modelo={item.modelo}
-                                        marca={item.marca}
-                                        preco={item.preco}
 
-                                    />
-                                )
-                            })
-                        }
-                        {/* total */}
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Total (BRL)</span>
-                            <strong>R$ {showPrice(totalValor)}</strong>
-                        </li>
-                    </ul>
+                    <div className='card shadow-sm'>
+                        <ul className="list-group list-group-flush mb-3">
+                            {carrinho.map(item => (
+                            <CardCheckout
+                                key={item.idCarrinho || item.cod_tenis}
+                                img={item.imagem}
+                                modelo={item.modelo}
+                                marca={item.marca}
+                                preco={item.preco}
+                                quantidade={item.quantidade}
+                            />
+                            ))}
+                            <li className="list-group-item d-flex justify-content-between align-items-center">
+                                <span>Total (BRL)</span>
+                                <strong>{new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(totalCalculado)}</strong>
+                            </li>
+                        </ul>
+
+                        {carrinho.length > 0 && (
+                            <div className="card-footer bg-transparent pt-2 px-3 border-top-0 text-end">
+                            <button className="btn btn-sm btn-outline-danger" onClick={limparCarrinho} style={{ maxWidth: '150px' }}>Limpar Carrinho</button>
+                            </div>
+                        )}
+                    </div>
 
 
                 </div>

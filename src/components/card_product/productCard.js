@@ -28,7 +28,7 @@ function ProductCard(props) {
                         </Link>
 
                         <div class="product-card__info">
-                             <Link to={`/produto/${props.product.cod_tenis}`}>
+                             <Link to={`/produto/${props.product.cod_tenis}`} className='product-card-link'>
                               <h2 class="product-card__title">{props.modelo}</h2>
                              </Link>  
                             <p class="product-card__description">{props.marca}</p>

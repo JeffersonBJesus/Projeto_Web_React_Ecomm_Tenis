@@ -9,13 +9,14 @@ function Produto(){
     const [tamanhoSelec, setTamanho] = useState(40);
     const [quantidade, setQuantidade] = useState(1);
     const navigate = useNavigate();
+    const [relacionados, setRelacionados] = useState([]);
 
     const aumentarQuantidade = () => {setQuantidade (q => q + 1);}
     const diminuirQuantidade = () => {if (quantidade > 1) {setQuantidade(q => q - 1);}}
     const handleSelecTamanho = (tamanho) => {setTamanho(tamanho);}
     const {id} = useParams();
-    const { addCarrinho } = useContext(CartContext);
-    const handleComprarAgora = () => {addCarrinho(tenis, quantidade,tamanhoSelec);
+    const { addCarrinho, comprarItemUnico } = useContext(CartContext);
+    const handleComprarAgora = () => {comprarItemUnico(tenis, quantidade,tamanhoSelec);
         navigate('/check')
     }
 
@@ -26,6 +27,11 @@ function Produto(){
             .then(data => {
                 const produtoEncontrado = data.find(item => item.cod_tenis === id);
                 setTenis(produtoEncontrado);
+
+                if (produtoEncontrado) {
+                    const produtoRelacionado = data.filter(item => item.marca === produtoEncontrado.marca && item.cod_tenis !== produtoEncontrado.cod_tenis).slice(0,4);
+                    setRelacionados(produtoRelacionado);
+                }
             })
             .catch(error => console.error("Falha ao carrega produtos:", error));
     }, [id]);
@@ -34,7 +40,7 @@ function Produto(){
         return <h2>Carregando detalhes do produto...</h2>;
     }
 
-    const tamanhosDisp = [38, 29, 40, 41, 42];
+    const tamanhosDisp = [38, 39, 40, 41, 42];
 
     return(
         <div className="detail-container">
@@ -74,7 +80,7 @@ function Produto(){
                             <button onClick={aumentarQuantidade}>+</button>
                         </div>
 
-                        <div className="action">
+                        <div className="actions">
                             <button className="add-cart" onClick={() => addCarrinho(tenis, quantidade, tamanhoSelec)}>Adicionar ao carrinho</button>
                             <button className="buy-now" onClick={handleComprarAgora}>Comprar agora</button>
                         </div>
@@ -93,6 +99,21 @@ function Produto(){
                     <h2 className="description-title active"><strong>Descrição</strong></h2>
                 </div>
                 <p className="description-content">{tenis.descricao || "Descrição não disponível."}</p>
+            </div>
+
+            <div className="related-items">
+                <h2 className="related-title"><strong>Produtos Relacionados</strong></h2>
+                <div className="related-items-grid">
+                    {relacionados.map(item => (
+                        <div key={item.cod_tenis} className="product-card-related">
+                            <Link to={`/produto/${item.cod_tenis}`}>
+                                <img src={`${process.env.PUBLIC_URL}/${item.imagem}`} />
+                                <p>{item.modelo}</p>
+                                <span>{new Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(item.preco)}</span>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
             </div>
 
         </div>
