@@ -1,5 +1,9 @@
-
+import CartContext from '../../context/Cart.provider'
+import { useContext } from 'react'
+import './cardCheck.css'
 function CardCheckout(props) {
+
+      const { incrementoCarrinho, decrementoCarrinho, deleteCarrinho } = useContext(CartContext)
   const showPrice = (number) => {
     let priceConverted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(number)
 

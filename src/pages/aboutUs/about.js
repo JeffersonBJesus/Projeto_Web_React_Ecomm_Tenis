@@ -8,12 +8,12 @@ export default function About() {
             <div class="container">
         <h2>Sobre Nós: A Sua Jornada Começa Aqui</h2>
 
-        <p>Bem-vindo(a) à **[Nome da Sua Loja]**! Mais do que apenas uma loja de tênis, somos o ponto de partida para a sua próxima aventura, o seu próximo desafio, ou simplesmente o seu próximo passo em grande estilo.</p>
+        <p>Bem-vindo(a) à Next Tenis! Mais do que apenas uma loja de tênis, somos o ponto de partida para a sua próxima aventura, o seu próximo desafio, ou simplesmente o seu próximo passo em grande estilo.</p>
 
         <p>Nascemos da paixão por tênis e da crença de que o calçado certo pode transformar o seu dia, impulsionar o seu desempenho e expressar a sua verdadeira personalidade. Compreendemos que um tênis não é apenas um item de vestuário; é uma extensão de quem você é, do seu estilo de vida e das suas aspirações.</p>
 
         <h3>Nossa História</h3>
-        <p>A **[Nome da Sua Loja]** foi fundada em <strong>[Ano de Fundação, ex: 2020]</strong> com uma visão clara: trazer o melhor do universo dos tênis para você, de forma acessível, confiável e inspiradora. Começamos com um sonho grande: ser referência em tênis online, e desde então, crescemos com uma dedicação incansável em oferecer uma seleção impecável de tênis que combinam **inovação, conforto, durabilidade e as últimas tendências**.</p>
+        <p>A Next Tenis foi fundada em <strong>2020</strong> com uma visão clara: trazer o melhor do universo dos tênis para você, de forma acessível, confiável e inspiradora. Começamos com um sonho grande: ser referência em tênis online, e desde então, crescemos com uma dedicação incansável em oferecer uma seleção impecável de tênis que combinam **inovação, conforto, durabilidade e as últimas tendências**.</p>
 
         <h3>O Que Nos Move</h3>
         <ul>
@@ -25,7 +25,7 @@ export default function About() {
         </ul>
 
         <h3>Nosso Compromisso com Você</h3>
-        <p>Na **[Nome da Sua Loja]**, você não é apenas um cliente; é parte da nossa comunidade. Estamos aqui para te guiar na escolha do tênis ideal, oferecer as melhores opções e garantir que cada compra seja uma experiência positiva.</p>
+        <p>Na Next Tenis, você não é apenas um cliente; é parte da nossa comunidade. Estamos aqui para te guiar na escolha do tênis ideal, oferecer as melhores opções e garantir que cada compra seja uma experiência positiva.</p>
         <p>Agradecemos por nos escolher para fazer parte da sua jornada. Seja para correr uma maratona, explorar a cidade, ou simplesmente viver cada momento com mais confiança e estilo, estamos com você a cada passo.</p>
 
         <div class="call-to-action">
