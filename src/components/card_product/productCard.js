@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from "react-router-dom";
 import './productCard.css'
 import CartContext from '../../context/Cart.provider'
 
@@ -19,14 +20,20 @@ function ProductCard(props) {
         <div class="col-3">
                 <div class="cont">
                     <div class="product-card">
-                        <div class="product-card__image">
-                            <img src={props.img}/>
-                        </div>
+                        
+                        <Link to={`/produto/${props.product.cod_tenis}`}>
+                          <div class="product-card__image">
+                              <img src={props.img}/>
+                          </div>
+                        </Link>
+
                         <div class="product-card__info">
-                            <h2 class="product-card__title">{props.modelo}</h2>
+                             <Link to={`/produto/${props.product.cod_tenis}`}>
+                              <h2 class="product-card__title">{props.modelo}</h2>
+                             </Link>  
                             <p class="product-card__description">{props.marca}</p>
                             <div class="product-card__price-row">
-                                <span class="product-card__price">R$ {showPrice(props.preco)}</span>
+                                <span class="product-card__price"> {showPrice(props.preco)}</span>
                                 <button  onClick={() => addCarrinho(props.product)} class="product-card__btn">Adicionar ao Carrinho</button> 
                             </div>
                         </div>

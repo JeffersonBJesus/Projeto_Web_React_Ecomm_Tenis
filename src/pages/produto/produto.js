@@ -1,17 +1,31 @@
-import React, {useState, useEffect} from "react";
-import {useParams, Link} from "react-router-dom";
+import React, {useState, useEffect, useContext} from "react";
+import {useParams, useNavigate, Link} from "react-router-dom";
 import './produto.css';
+import '../../context/Cart.provider';
+import CartContext, { CartProvider } from "../../context/Cart.provider";
 
 function Produto(){
     const [tenis, setTenis] = useState(null);
+    const [tamanhoSelec, setTamanho] = useState(40);
+    const [quantidade, setQuantidade] = useState(1);
+    const navigate = useNavigate();
+
+    const aumentarQuantidade = () => {setQuantidade (q => q + 1);}
+    const diminuirQuantidade = () => {if (quantidade > 1) {setQuantidade(q => q - 1);}}
+    const handleSelecTamanho = (tamanho) => {setTamanho(tamanho);}
     const {id} = useParams();
+    const { addCarrinho } = useContext(CartContext);
+    const handleComprarAgora = () => {addCarrinho(tenis, quantidade,tamanhoSelec);
+        navigate('/check')
+    }
+
 
     useEffect(() => {
-        fetch('./api/tenis.json')
+        fetch('/api/tenis.json')
             .then(response => response.json())
             .then(data => {
-                const produto_encontrado = data.find(item => item.cod_tenis === id);
-                setTenis(produto_encontrado);
+                const produtoEncontrado = data.find(item => item.cod_tenis === id);
+                setTenis(produtoEncontrado);
             })
             .catch(error => console.error("Falha ao carrega produtos:", error));
     }, [id]);
@@ -19,6 +33,8 @@ function Produto(){
     if(!tenis) {
         return <h2>Carregando detalhes do produto...</h2>;
     }
+
+    const tamanhosDisp = [38, 29, 40, 41, 42];
 
     return(
         <div className="detail-container">
@@ -31,10 +47,6 @@ function Produto(){
             <div className="product-detail">
                 <div className="product-images">
                     <img src={`${process.env.PUBLIC_URL}/${tenis.imagem}`} alt={tenis.modelo} className="main-image"/>
-                    <div className="thumbnail-images">
-                        <img src={`${process.env.PUBLIC_URL}/${tenis.imagem}`} alt="Thumbnail 1"/>
-                        <img src={`${process.env.PUBLIC_URL}/${tenis.imagem}`} alt="Thumbnail 2"/>
-                    </div>
                 </div>
 
                 <div className="product-info">
@@ -44,27 +56,27 @@ function Produto(){
                     <p className="payment-info">em até 10x sem juros</p>
 
 
-                    <div className="options">
-                        <p className="option-label">Tamanho:</p>
-                        <div className="option-buttons">
-                            <button className="active">38</button>
-                            <button>39</button>
-                            <button>40</button>
-                            <button>41</button>
-                            <button>42</button>
-                        </div>
+                    <div className="option-buttons">
+                        {tamanhosDisp.map((tamanho) => (
+                         <button 
+                                key={tamanho} 
+                                className={tamanhoSelec === tamanho ? 'active' : ''} 
+                                onClick={() => handleSelecTamanho(tamanho)}>
+                                {tamanho}
+                            </button>
+                        ))}
                     </div>
 
                     <div className="actions-wrapper">
                         <div className="quantity-selection">
-                            <button>-</button>
-                            <input type="text" className="quantity-input" defaultValue={1}/>
-                            <button>+</button>
+                            <button onClick={diminuirQuantidade}>-</button>
+                            <input type="text" className="quantity-input" value={quantidade}/>
+                            <button onClick={aumentarQuantidade}>+</button>
                         </div>
 
                         <div className="action">
-                            <button className="add-cart">Adicionar ao carrinho</button>
-                            <button className="buy-now">Comprar agora</button>
+                            <button className="add-cart" onClick={() => addCarrinho(tenis, quantidade, tamanhoSelec)}>Adicionar ao carrinho</button>
+                            <button className="buy-now" onClick={handleComprarAgora}>Comprar agora</button>
                         </div>
                     </div>
 
@@ -74,6 +86,13 @@ function Produto(){
                         <p><strong>Entrega:</strong> 3 a 5 dias úteis</p>
                     </div>
                 </div>
+            </div>
+            
+            <div className="description-section">
+                <div className="description-tabs">
+                    <h2 className="description-title active"><strong>Descrição</strong></h2>
+                </div>
+                <p className="description-content">{tenis.descricao || "Descrição não disponível."}</p>
             </div>
 
         </div>

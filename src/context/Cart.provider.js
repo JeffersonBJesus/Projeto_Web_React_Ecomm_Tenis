@@ -17,28 +17,28 @@ function CartProvider(props) {
         return context
     }
 
-    const addCarrinho = (item) => {
-        let carrinhoLista = []
-        if (localStorage.getItem('cart')) {
-            let validade = false
-            carrinhoLista = JSON.parse(localStorage.getItem('cart'))
-            carrinhoLista.map((novo) => {
-                if (item.cod_tenis == novo.cod_tenis) {
-                    novo.quantidade++
-                    validade = true
-                }
-            })
-            if (!validade) {
-                carrinhoLista.push(item)
-            }
-        } else {
-            carrinhoLista.push(item)
-        }
-        localStorage.setItem('cart', JSON.stringify(carrinhoLista))
-        localStorage.qtyCarrinho = JSON.stringify(carrinhoLista.length)
-        setCarrinho(carrinhoLista)
-        setQtyCarrinho(carrinhoLista.length)
+    const addCarrinho = (item, quantidadeAdicionar, tamanhoSelecionado) => {
+    let carrinhoLista = ValidaCarrinho();
+    const idItemNoCarrinho = item.cod_tenis + '-' + tamanhoSelecionado;
+    const itemExistente = carrinhoLista.find(produto => produto.idCarrinho === idItemNoCarrinho);
+
+    if (itemExistente) {
+        itemExistente.quantidade += quantidadeAdicionar;
+    } else {
+        const novoItem = {
+            ...item,
+            idCarrinho: idItemNoCarrinho,
+            quantidade: quantidadeAdicionar,
+            tamanho: tamanhoSelecionado,
+        };
+        carrinhoLista.push(novoItem);
     }
+
+    localStorage.setItem('cart', JSON.stringify(carrinhoLista));
+    setCarrinho(carrinhoLista);
+    setQtyCarrinho(carrinhoLista.length);
+    alert('Produto adicionado ao carrinho!');
+};
     
     function incrementoCarrinho(item) {
         let carrinhoLista = []
