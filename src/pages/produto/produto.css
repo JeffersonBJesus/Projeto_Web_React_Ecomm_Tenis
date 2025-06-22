@@ -77,11 +77,6 @@ body {
     margin-bottom: 30px;
 }
 
-.product-info .options {
-    padding-bottom: 0;
-    margin-bottom: 30px;
-}
-
 .product-info .actions-wrapper {
     margin-bottom: 30px;
 }
@@ -118,11 +113,6 @@ body {
 
 .quantity-selection{
     margin-top: 30px;
-}
-
-.quantity-section {
-    display: flex;
-    align-items: center;
 }
 
 .quantity-section button {
