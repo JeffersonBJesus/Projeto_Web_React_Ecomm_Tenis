@@ -15,16 +15,19 @@ function CardCheckout(props) {
 
   }
   return (
-    <li className="list-group-item d-flex justify-content-between lh-sm align-items-center">
+    <div className="list-group-item d-flex justify-content-between lh-sm align-items-center">
 
       <div>
         <h6 className="my-0">{props.quantidade || 1}x  {props.modelo}</h6>
         <small className="text-body-secondary">{props.marca}</small>
       </div>
+      <div>
       <span className="text-body-secondary">
         {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format((props.preco || 0) * (props.quantidade || 1))}
       </span> 
-    </li>
+      </div>
+
+    </div>
   )
 }
 
