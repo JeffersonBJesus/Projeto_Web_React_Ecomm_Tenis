@@ -184,6 +184,7 @@ function Checkout() {
                                         modelo={item.modelo}
                                         marca={item.marca}
                                         preco={item.preco}
+                                        tenis={item}
 
                                     />
                                 )
