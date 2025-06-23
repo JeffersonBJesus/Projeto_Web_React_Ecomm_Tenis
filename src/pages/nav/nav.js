@@ -11,8 +11,8 @@ export default function Nav() {
       <nav>
         <ul className='ulist'>
           <li><NavLink to="/">Inicio</NavLink></li>
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categoria
           </a>
           <ul className="dropdown-menu">
@@ -23,8 +23,8 @@ export default function Nav() {
             <li><a className="dropdown-item" href="/categoria/Outdoor">Outdoor</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Marca
           </a>
           <ul className="dropdown-menu">

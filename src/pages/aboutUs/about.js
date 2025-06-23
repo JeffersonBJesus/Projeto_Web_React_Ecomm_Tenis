@@ -5,7 +5,7 @@ export default function About() {
     
     return (
         <>
-            <div class="container">
+            <div className="container">
         <h2>Sobre Nós: A Sua Jornada Começa Aqui</h2>
 
         <p>Bem-vindo(a) à Next Tenis! Mais do que apenas uma loja de tênis, somos o ponto de partida para a sua próxima aventura, o seu próximo desafio, ou simplesmente o seu próximo passo em grande estilo.</p>
@@ -28,7 +28,7 @@ export default function About() {
         <p>Na Next Tenis, você não é apenas um cliente; é parte da nossa comunidade. Estamos aqui para te guiar na escolha do tênis ideal, oferecer as melhores opções e garantir que cada compra seja uma experiência positiva.</p>
         <p>Agradecemos por nos escolher para fazer parte da sua jornada. Seja para correr uma maratona, explorar a cidade, ou simplesmente viver cada momento com mais confiança e estilo, estamos com você a cada passo.</p>
 
-        <div class="call-to-action">
+        <div className="call-to-action">
             <p><strong>Pronto(a) para o seu próximo passo?</strong></p>
             <a href="/">Explore Nossos Tênis!</a>
         </div>

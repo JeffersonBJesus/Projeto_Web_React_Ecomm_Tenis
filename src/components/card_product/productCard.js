@@ -17,24 +17,24 @@ function ProductCard(props) {
 
   }
     return(
-        <div class="col-3">
-                <div class="cont">
-                    <div class="product-card">
+        <div className="col-3">
+                <div className="cont">
+                    <div className="product-card">
                         
                         <Link to={`/produto/${props.product.cod_tenis}`}>
-                          <div class="product-card__image">
+                          <div className="product-card__image">
                               <img src={props.img}/>
                           </div>
                         </Link>
 
-                        <div class="product-card__info">
+                        <div className="product-card__info">
                              <Link to={`/produto/${props.product.cod_tenis}`} className='product-card-link'>
-                              <h2 class="product-card__title">{props.modelo}</h2>
+                              <h2 className="product-card__title">{props.modelo}</h2>
                              </Link>  
-                            <p class="product-card__description">{props.marca}</p>
-                            <div class="product-card__price-row">
-                                <span class="product-card__price"> {showPrice(props.preco)}</span>
-                                <button  onClick={() => addCarrinho(props.product)} class="product-card__btn">Adicionar ao Carrinho</button> 
+                            <p className="product-card__description">{props.marca}</p>
+                            <div className="product-card__price-row">
+                                <span className="product-card__price"> {showPrice(props.preco)}</span>
+                                <button  onClick={() => addCarrinho(props.product)} className="product-card__btn">Adicionar ao Carrinho</button> 
                             </div>
                         </div>
                     </div>
@@ -44,3 +44,8 @@ function ProductCard(props) {
 }
 
 export default ProductCard;
+
+
+
+
+

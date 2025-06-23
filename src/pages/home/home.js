@@ -22,21 +22,21 @@ export default function Home() {
 
   return (
     <>
-      <div class="container-fluid" >
-        <div class="one">
+      <div className="container-fluid" >
+        <div className="one">
           <h1>Novidades </h1>
         </div>
       </div>
 
-      <div class="container-fluid" >
-        <div class="row">
+      <div className="container-fluid" >
+        <div className="row">
           <Carousel />
         </div>
       </div>
 
-      <div class="row">
+      <div className="row">
 
-        <div class="one">
+        <div className="one">
           <h1>Conheça nosso catalogo</h1>
         </div>
         {
