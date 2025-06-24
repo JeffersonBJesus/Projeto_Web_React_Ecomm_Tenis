@@ -115,12 +115,13 @@ body {
     margin-top: 30px;
 }
 
-.quantity-section button {
+.quantity-selection button {
     padding: 10px 15px;
     border: 1px solid #e6e6e6;
     background: #fff;
     cursor: pointer;
     border-radius: 5px;
+    width: fit-content;
 }
 
 .quantity-input {

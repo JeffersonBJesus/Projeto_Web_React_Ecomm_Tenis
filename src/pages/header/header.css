@@ -1,9 +1,25 @@
-.cesta{
-position: relative;
-  background: url('../../../public/imagens/cesta.png') center no-repeat;
+.site-header {
+  background-color: #eaefef; 
 }
 
-.bg-cest{
-    position: absolute;
-    top: 14px;
+.site-header .logo-container-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    background-image: none !important;
+    height: auto !important;
+    padding: 0 !important;
+}
+
+.logo span {
+    position: static !important; 
+    display: block;
+    width: 340px; 
+    height: 140px; 
+    background: url('../../../public/imagens/logo.png') center no-repeat;
+    background-size: contain;
 }

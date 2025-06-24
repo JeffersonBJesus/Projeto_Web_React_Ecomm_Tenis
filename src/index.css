@@ -41,7 +41,6 @@ ul {
 
 .topo li {
   display: inline-block;
-  border-right: 1px solid #999;
 }
 .topo li a {
   text-transform: uppercase;

@@ -7,7 +7,7 @@ function CartProvider(props) {
     const [qtyCarrinho, setQtyCarrinho] = useState(0)
     const [quantidadeCesta, setQuantidadeCesta] = useState(0)
     const [quantidadeProduto, setQuantidadeProduto] = useState(0)
-    const [valorTotal, setValorTotal] = useState(0) 
+    const [valorTotal, setValorTotal] = useState(0)
 
 
     function ValidaCarrinho() {
@@ -18,94 +18,84 @@ function CartProvider(props) {
     }
 
     const addCarrinho = (item, quantidadeAdicionar, tamanhoSelecionado) => {
-    let carrinhoLista = ValidaCarrinho();
-    const idItemNoCarrinho = item.cod_tenis + '-' + tamanhoSelecionado;
-    const itemExistente = carrinhoLista.find(produto => produto.idCarrinho === idItemNoCarrinho);
-
-    if (itemExistente) {
-        itemExistente.quantidade += quantidadeAdicionar;
-    } else {
-        const novoItem = {
-            ...item,
-            idCarrinho: idItemNoCarrinho,
-            quantidade: quantidadeAdicionar,
-            tamanho: tamanhoSelecionado,
-        };
-        carrinhoLista.push(novoItem);
-    }
-
-    localStorage.setItem('cart', JSON.stringify(carrinhoLista));
-    setCarrinho(carrinhoLista);
-    setQtyCarrinho(carrinhoLista.length);
-    alert('Produto adicionado ao carrinho!');
-};
+        let carrinhoLista = ValidaCarrinho();
+        const tamanho = tamanhoSelecionado || 40; 
+        const idItemNoCarrinho = item.cod_tenis + '-' + tamanho;
+        const itemExistente = carrinhoLista.find(produto => produto.idCarrinho === idItemNoCarrinho);
     
-    const comprarItemUnico = (item, quantidade, tamanho) => {
-    const itemParaComprar = {
-        ...item,
-        idCarrinho: item.cod_tenis + '-' + tamanho,
-        quantidade: quantidade,
-        tamanho: tamanho,
-    };
-    const novoCarrinho = [itemParaComprar];
-    localStorage.setItem('cart', JSON.stringify(novoCarrinho));
-    setCarrinho(novoCarrinho);
-    setQtyCarrinho(1);
-};
-
-    function incrementoCarrinho(item) {
-        let carrinhoLista = []
-        if (localStorage.getItem('cart')) {
-            let validade = false
-            carrinhoLista = JSON.parse(localStorage.getItem('cart'))
-            carrinhoLista.map((novo) => {
-                if (item.cod_tenis == novo.cod_tenis) {
-                    novo.quantidade++
-                    validade = true
-                }
-            })
+        const quantidade = quantidadeAdicionar || 1;
+    
+        if (itemExistente) {
+            itemExistente.quantidade += quantidade;
+        } else {
+            const novoItem = {
+                ...item,
+                idCarrinho: idItemNoCarrinho,
+                quantidade: quantidade,
+                tamanho: tamanho,
+            };
+            carrinhoLista.push(novoItem);
         }
-        localStorage.setItem('cart', JSON.stringify(carrinhoLista))
-        localStorage.qtyCarrinho = JSON.stringify(carrinhoLista.length)
-        setCarrinho(carrinhoLista)
-        setQtyCarrinho(carrinhoLista.length)
-        total()
+    
+        localStorage.setItem('cart', JSON.stringify(carrinhoLista));
+        setCarrinho(carrinhoLista);
+        setQtyCarrinho(carrinhoLista.length);
+        alert('Produto adicionado ao carrinho!');
+    };
+
+    const comprarItemUnico = (item, quantidade, tamanho) => {
+        const itemParaComprar = {
+            ...item,
+            idCarrinho: item.cod_tenis + '-' + tamanho,
+            quantidade: quantidade,
+            tamanho: tamanho,
+        };
+        const novoCarrinho = [itemParaComprar];
+        localStorage.setItem('cart', JSON.stringify(novoCarrinho));
+        setCarrinho(novoCarrinho);
+        setQtyCarrinho(1);
+    };
+
+    function incrementoCarrinho(idCarrinho) {
+        let carrinhoLista = ValidaCarrinho();
+        const item = carrinhoLista.find(produto => produto.idCarrinho === idCarrinho);
+        if (item) {
+            item.quantidade++;
+            localStorage.setItem('cart', JSON.stringify(carrinhoLista));
+            setCarrinho(carrinhoLista);
+            total();
+        }
     }
 
 
-    const decrementoCarrinho = (item) => {
-        let carrinhoLista = []
-        if (localStorage.getItem('cart')) {
-            let validade = false
-            carrinhoLista = JSON.parse(localStorage.getItem('cart'))
-            carrinhoLista.map((novo) => {
-                if (item.cod_tenis == novo.cod_tenis) {
-                    novo.quantidade--
-
-                    validade = true
-                }
-            })
+    const decrementoCarrinho = (idCarrinho) => {
+        let carrinhoLista = ValidaCarrinho();
+        const item = carrinhoLista.find(produto => produto.idCarrinho === idCarrinho);
+        if (item) {
+            item.quantidade--;
+            if (item.quantidade <= 0) {
+                deleteCarrinho(idCarrinho);
+            } else {
+                localStorage.setItem('cart', JSON.stringify(carrinhoLista));
+                setCarrinho(carrinhoLista);
+                total();
+            }
         }
-        localStorage.setItem('cart', JSON.stringify(carrinhoLista))
-        localStorage.qtyCarrinho = JSON.stringify(carrinhoLista.length)
-        setCarrinho(carrinhoLista)
-        setQtyCarrinho(carrinhoLista.length)
-        total()
     }
 
     function incrementoQuantyProduto(item) {
         if (carrinho.find(produto => item.cod_tenis == produto.cod_tenis)) {
-            incrementoCarrinho(item) 
+            incrementoCarrinho(item)
             console.log("tem no carrinho")
         } else {
             if (item.estoque == item.quantidade) {
                 console.log("valor igual ao estue maximo" )
                 console.log( item)
             } else {
-                console.log("adicionou + 1 ") 
-               console.log("adicionou") 
-               console.log(item.quantidade++ )
-               console.log( item)
+                console.log("adicionou + 1 ")
+                console.log("adicionou")
+                console.log(item.quantidade++ )
+                console.log( item)
 
             }
         }
@@ -128,7 +118,7 @@ function CartProvider(props) {
             if (item.quantidade == 1) {
                 console.log("valor igual a 1 " )
             } else {
-               console.log("adicionou - 1") 
+               console.log("adicionou - 1")
                console.log(item.quantidade-- )
                console.log( item)
             }
@@ -149,9 +139,9 @@ function CartProvider(props) {
         })
     }
 
-    
-    const deleteCarrinho = (item) => {
-        const remove = carrinho.filter(items => items.cod_tenis !== item.cod_tenis)
+
+    const deleteCarrinho = (idCarrinho) => {
+        const remove = carrinho.filter(items => items.idCarrinho !== idCarrinho)
         localStorage.setItem("cart", JSON.stringify(remove))
         setCarrinho(remove)
         setQtyCarrinho(remove.length)
@@ -175,7 +165,7 @@ function CartProvider(props) {
                 deleteCarrinho, decrementoCarrinho, incrementoCarrinho,
                 addCarrinho, quantidadeCarrinho, listarCarrinho,
                 carrinho, qtyCarrinho, quantidadeProduto, quantidadeCesta,
-                valorTotal, total, incrementoQuantyProduto, decrementoQuantyProduto, 
+                valorTotal, total, incrementoQuantyProduto, decrementoQuantyProduto,
                 limparCarrinho, comprarItemUnico
             }}>
             {props.children}

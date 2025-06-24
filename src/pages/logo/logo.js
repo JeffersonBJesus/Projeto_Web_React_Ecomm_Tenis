@@ -4,7 +4,7 @@ const Logo = () =>  {
   return (
     <Link to="/">
       <h1 className="logo">
-        <span>Next Step Store</span>
+        <span></span>
       </h1>
     </Link>
   )
