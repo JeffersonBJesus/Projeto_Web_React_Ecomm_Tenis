@@ -28,20 +28,20 @@ export default function Nav() {
                     <li className="dropdown">
                         <a href="#" className="nav-link dropdown-toggle" role="button">Categoria</a>
                         <ul className="dropdown-menu">
-                            <li onClick={closeMenu}><NavLink className="dropdown-item" to="/categoria/Esportivo">Esportivo</NavLink></li>
-                            <li onClick={closeMenu}><NavLink className="dropdown-item" to="/categoria/Streetwear">Streetwear</NavLink></li>
-                            <li onClick={closeMenu}><NavLink className="dropdown-item" to="/categoria/Casual">Casual</NavLink></li>
-                            <li onClick={closeMenu}><NavLink className="dropdown-item" to="/categoria/Skate">Skate</NavLink></li>
-                            <li onClick={closeMenu}><NavLink className="dropdown-item" to="/categoria/Outdoor">Outdoor</NavLink></li>
+                            <li onClick={closeMenu}><a className="dropdown-item" href="/categoria/Esportivo">Esportivo</a></li>
+                            <li onClick={closeMenu}><a className="dropdown-item" href="/categoria/Streetwear">Streetwear</a></li>
+                            <li onClick={closeMenu}><a className="dropdown-item" href="/categoria/Casual">Casual</a></li>
+                            <li onClick={closeMenu}><a className="dropdown-item" href="/categoria/Skate">Skate</a></li>
+                            <li onClick={closeMenu}><a className="dropdown-item" href="/categoria/Outdoor">Outdoor</a></li>
                         </ul>
                     </li>
                     <li className="dropdown">
                         <a href="#" className="nav-link dropdown-toggle" role="button">Marca</a>
                         <ul className="dropdown-menu">
-                            <li onClick={closeMenu}><NavLink className="dropdown-item" to="/marca/Nike">Nike</NavLink></li>
-                            <li onClick={closeMenu}><NavLink className="dropdown-item" to="/marca/Puma">Puma</NavLink></li>
-                            <li onClick={closeMenu}><NavLink className="dropdown-item" to="/marca/Adidas">Adidas</NavLink></li>
-                            <li onClick={closeMenu}><NavLink className="dropdown-item" to="/marca/Outros">Outros</NavLink></li>
+                            <li onClick={closeMenu}><a className="dropdown-item" href="/marca/Nike">Nike</a></li>
+                            <li onClick={closeMenu}><a className="dropdown-item" href="/marca/Puma">Puma</a></li>
+                            <li onClick={closeMenu}><a className="dropdown-item" href="/marca/Adidas">Adidas</a></li>
+                            <li onClick={closeMenu}><a className="dropdown-item" href="/marca/Outros">Outros</a></li>
                         </ul>
                     </li>
                     <li onClick={closeMenu}><NavLink to="/sobrenos">Sobre Nós</NavLink></li>

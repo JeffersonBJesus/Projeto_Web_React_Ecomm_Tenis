@@ -11,6 +11,7 @@ import { Component } from "react";
 import Contexts from './context/index'
 import About from './pages/aboutUs/about.js'
 import Produto from "./pages/produto/produto.js";
+import Success  from "./pages/success/success.js";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path="/produto/:id" element={<Produto />} />
           <Route path="/check" element={<Checkout />} />
           <Route path="/sobrenos" element={<About />} />
+          <Route path="/sucesso" element={<Success />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer></Footer>

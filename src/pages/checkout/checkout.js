@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import CartContext from '../../context/Cart.provider'
 import CardCheckout from '../../components/cardCheckoutProducts/cardCheck'
 import './checkout.css'
@@ -25,7 +26,7 @@ function Checkout() {
                         <div className="row g-3">
                             <div className="col-sm-6">
                                 <label for="firstName" className="form-label">Primeiro Nome</label>
-                                <input type="text" className="form-control" id="firstName" placeholder="" value="" required />
+                                <input type="text" className="form-control" id="firstName" placeholder=""/>
                                 <div className="invalid-feedback">
                                     Um nome válido é obrigatório.
                                 </div>
@@ -33,7 +34,7 @@ function Checkout() {
 
                             <div className="col-sm-6">
                                 <label for="lastName" className="form-label">Sobrenome</label>
-                                <input type="text" className="form-control" id="lastName" placeholder="" value="" required />
+                                <input type="text" className="form-control" id="lastName" placeholder="" />
                                 <div className="invalid-feedback">
                                     Um sobrenome válido é obrigatório.
                                 </div>
@@ -49,7 +50,7 @@ function Checkout() {
 
                             <div className="col-12">
                                 <label for="address" className="form-label">Endereço</label>
-                                <input type="text" className="form-control" id="address" placeholder="Rua, número" required />
+                                <input type="text" className="form-control" id="address" placeholder="Rua, número"  />
                                 <div className="invalid-feedback">
                                     Por favor, insira seu endereço de entrega.
                                 </div>
@@ -62,7 +63,7 @@ function Checkout() {
 
                             <div className="col-md-5">
                                 <label for="country" className="form-label">País</label>
-                                <select className="form-select" id="country" required>
+                                <select className="form-select" id="country" >
                                     <option value="">Escolha...</option>
                                     <option>Brasil</option>
                                     <option>Estados Unidos</option>
@@ -75,7 +76,8 @@ function Checkout() {
 
                             <div className="col-md-4">
                                 <label for="state" className="form-label">Estado</label>
-                                <select classN="form-select" id="state" required>
+                                <br/>
+                                <select className="form-select" id="state" >
                                     <option value="">Escolha...</option>
                                     <option>São Paulo</option>
                                     <option>Rio de Janeiro</option>
@@ -88,7 +90,7 @@ function Checkout() {
 
                             <div className="col-md-3">
                                 <label for="zip" className="form-label">CEP</label>
-                                <input type="text" className="form-control" id="zip" placeholder="" required />
+                                <input type="text" className="form-control" id="zip" placeholder=""  />
                                 <div className="invalid-feedback">
                                     CEP obrigatório.
                                 </div>
@@ -101,15 +103,15 @@ function Checkout() {
 
                         <div className="my-3">
                             <div className="form-check">
-                                <input id="credit" name="paymentMethod" type="radio" className="form-check-input" checked required />
+                                <input id="credit" name="paymentMethod" type="radio" className="form-check-input" checked  />
                                 <label className="form-check-label" for="credit">Cartão de Crédito</label>
                             </div>
                             <div className="form-check">
-                                <input id="debit" name="paymentMethod" type="radio" className="form-check-input" required />
+                                <input id="debit" name="paymentMethod" type="radio" className="form-check-input"  />
                                 <label className="form-check-label" for="debit">Cartão de Débito</label>
                             </div>
                             <div className="form-check">
-                                <input id="paypal" name="paymentMethod" type="radio" className="form-check-input" required />
+                                <input id="paypal" name="paymentMethod" type="radio" className="form-check-input"  />
                                 <label className="form-check-label" for="paypal">PayPal</label>
                             </div>
                         </div>
@@ -117,7 +119,7 @@ function Checkout() {
                         <div className="row gy-3">
                             <div className="col-md-6">
                                 <label for="cc-name" className="form-label">Nome no Cartão</label>
-                                <input type="text" className="form-control" id="cc-name" placeholder="" required />
+                                <input type="text" className="form-control" id="cc-name" placeholder=""  />
                                 <small className="text-body-secondary">Nome completo como exibido no cartão</small>
                                 <div className="invalid-feedback">
                                     Nome no cartão é obrigatório.
@@ -126,7 +128,7 @@ function Checkout() {
 
                             <div className="col-md-6">
                                 <label for="cc-number" className="form-label">Número do Cartão de Crédito</label>
-                                <input type="text" className="form-control" id="cc-number" placeholder="" required />
+                                <input type="text" className="form-control" id="cc-number" placeholder=""  />
                                 <div className="invalid-feedback">
                                     Número do cartão de crédito é obrigatório.
                                 </div>
@@ -134,7 +136,7 @@ function Checkout() {
 
                             <div className="col-md-3">
                                 <label for="cc-expiration" className="form-label">Validade</label>
-                                <input type="text" className="form-control" id="cc-expiration" placeholder="MM/AA" required />
+                                <input type="text" className="form-control" id="cc-expiration" placeholder="MM/AA"  />
                                 <div className="invalid-feedback">
                                     Data de validade é obrigatória.
                                 </div>
@@ -142,7 +144,7 @@ function Checkout() {
 
                             <div className="col-md-3">
                                 <label for="cc-cvv" className="form-label">CVV</label>
-                                <input type="text" className="form-control" id="cc-cvv" placeholder="" required />
+                                <input type="text" className="form-control" id="cc-cvv" placeholder=""  />
                                 <div className="invalid-feedback">
                                     Código de segurança é obrigatório.
                                 </div>
@@ -150,7 +152,7 @@ function Checkout() {
                         </div>
 
                         <hr className="my-4" />
-                        <button className="w-100 btn btn-primary btn-lg" type="submit">Finalizar Compra</button>
+                        <Link to='/sucesso'><button className="w-100 btn btn-primary btn-lg" type="submit">Finalizar Compra</button></Link>
                     </form>
                 </div>
 
