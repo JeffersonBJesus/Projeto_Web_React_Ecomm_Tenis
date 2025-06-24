@@ -172,6 +172,7 @@ function Checkout() {
                                 marca={item.marca}
                                 preco={item.preco}
                                 quantidade={item.quantidade}
+                                tamanho={item.tamanho}
                             />
                             ))}
                             <div className="list-group-item d-flex justify-content-between align-items-center">

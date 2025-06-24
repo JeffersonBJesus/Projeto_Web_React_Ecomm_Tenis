@@ -19,7 +19,7 @@ function CardCheckout(props) {
 
       <div>
         <h6 className="my-0">{props.quantidade || 1}x  {props.modelo}</h6>
-        <small className="text-body-secondary">{props.marca}</small>
+        <small className="text-body-secondary">{props.marca} | Tam. {props.tamanho}</small>
       </div>
       <div>
       <span className="text-body-secondary">
