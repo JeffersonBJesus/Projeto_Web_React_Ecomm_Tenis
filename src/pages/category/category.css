@@ -1,0 +1,8 @@
+.one h2 {
+    margin-top: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  font-size: 50px;
+    font-variant: all-small-caps;
+}

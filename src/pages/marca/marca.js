@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import ProductCard from '../../components/card_product/productCard'
 import axios from 'axios'
+import './marca.css'
+
 export default function Marca() {
     const { buscar } = useParams()
     const [tenis, setTenis] = useState([])
@@ -35,7 +37,11 @@ export default function Marca() {
         <>
             <div className="container-fluid">
                 <div className="row">
-                    <h3 >Filtro {buscar.toLowerCase()}</h3>
+                                        <div className="container-fluid" >
+                        <div className="one">
+                            <h2>{buscar.toLowerCase()}</h2>
+                        </div>
+                    </div>
                     {
                         tenis
                             .map(item => {

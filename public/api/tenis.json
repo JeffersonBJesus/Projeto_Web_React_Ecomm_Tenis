@@ -1,6 +1,6 @@
 [
-  {     "quantidade": 1,
- 
+  {
+    "quantidade": 1,
     "cod_tenis": "NKAMEX001",
     "modelo": "Tênis Nike Air Max Excee",
     "marca": "Nike",
@@ -10,8 +10,8 @@
     "preco": 549.99,
     "descricao": "Inspirado no Nike Air Max 90, o Air Max Excee celebra um clássico com um visual renovado. Linhas alongadas e proporções distorcidas no cabedal trazem um ícone para um espaço novo e moderno, garantindo conforto para o dia todo."
   },
-  {    
-        "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "ADULTRB002",
     "modelo": "Tênis Adidas Ultraboost 22",
     "marca": "Adidas",
@@ -21,8 +21,8 @@
     "preco": 799.90,
     "descricao": "Projetado para performance e conforto, o Ultraboost 22 oferece um retorno de energia incrível a cada passada graças à entressola BOOST. Ideal para corridas e treinos, com um ajuste perfeito que abraça os pés."
   },
-  {    
-        "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "PUMARX003",
     "modelo": "Tênis Puma RS-X Reinvention",
     "marca": "Puma",
@@ -32,8 +32,8 @@
     "preco": 489.00,
     "descricao": "Com um design retrofuturista, o Puma RS-X Reinvention combina materiais diversos e uma silhueta robusta. É a escolha perfeita para quem busca um visual arrojado e marcante sem abrir mão do conforto da tecnologia RS."
   },
-  {    
-        "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "NKBKAZ004",
     "modelo": "Tênis Nike Blazer Mid '77 Vintage",
     "marca": "Nike",
@@ -43,7 +43,8 @@
     "preco": 629.99,
     "descricao": "Um clássico das quadras de basquete que se tornou um ícone da moda. O Nike Blazer Mid '77 Vintage ostenta um visual atemporal com acabamento de entressola vintage, tornando-o uma peça essencial em qualquer guarda-roupa."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "ADFORU005",
     "modelo": "Tênis Adidas Forum Low",
     "marca": "Adidas",
@@ -53,7 +54,8 @@
     "preco": 599.90,
     "descricao": "Direto das quadras dos anos 80, o Adidas Forum Low domina as ruas com seu estilo inconfundível. Detalhes icônicos como o X no tornozelo e a tira ajustável mantêm o design original e autêntico."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "CONVCT006",
     "modelo": "Tênis Converse Chuck 70 High Top",
     "marca": "Converse",
@@ -63,7 +65,8 @@
     "preco": 379.90,
     "descricao": "O Chuck 70 é uma versão aprimorada do clássico All Star. Construído com materiais premium, palmilha com maior amortecimento e detalhes vintage, ele celebra a herança do original com mais conforto e durabilidade."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "VANOAU007",
     "modelo": "Tênis Vans Old Skool",
     "marca": "Vans",
@@ -73,7 +76,8 @@
     "preco": 329.90,
     "descricao": "O primeiro a apresentar a icônica sidestripe da Vans, o Old Skool é um clássico atemporal da cultura do skate. Com cabedal de lona e camurça duráveis, ele está pronto para qualquer desafio, seja na pista ou na cidade."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "NKPEGZ008",
     "modelo": "Tênis Nike Air Zoom Pegasus 39",
     "marca": "Nike",
@@ -83,7 +87,8 @@
     "preco": 699.99,
     "descricao": "O Pegasus 39 é o seu cavalo de batalha para o dia a dia. Com uma sensação de suporte para ajudar a manter o pé contido e amortecimento sob o pé com 2 unidades Zoom Air, ele garante uma transição suave e energizada."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "ASICGEL009",
     "modelo": "Tênis Asics Gel-Kayano 29",
     "marca": "Asics",
@@ -93,7 +98,8 @@
     "preco": 749.90,
     "descricao": "Projetado para estabilidade e conforto em longas distâncias, o Gel-Kayano 29 é um dos favoritos dos corredores. A tecnologia GEL™ e o amortecimento FF BLAST™ PLUS proporcionam uma aterrissagem suave e um impulso responsivo."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "NEWBLS010",
     "modelo": "Tênis New Balance 574",
     "marca": "New Balance",
@@ -103,7 +109,8 @@
     "preco": 419.99,
     "descricao": "Um ícone de engenhosidade e originalidade, o New Balance 574 é um clássico que nunca sai de moda. Sua silhueta híbrida de estrada e trilha oferece versatilidade e conforto para o uso diário, combinando com qualquer estilo."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "ADGAZ011",
     "modelo": "Tênis Adidas Gazelle",
     "marca": "Adidas",
@@ -113,7 +120,8 @@
     "preco": 469.90,
     "descricao": "Simples, clássico e sempre atual. O Adidas Gazelle é um ícone da cultura urbana, conhecido por seu cabedal de camurça macia e as três listras contrastantes. Um verdadeiro clássico para todas as ocasiões."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "PUMASU012",
     "modelo": "Tênis Puma Suede Classic XXI",
     "marca": "Puma",
@@ -123,7 +131,8 @@
     "preco": 349.90,
     "descricao": "Um dos tênis mais reconhecidos da Puma, o Suede Classic tem impactado a cultura de rua por décadas. Com seu cabedal de camurça e design atemporal, ele continua a ser uma escolha de estilo e conforto."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "NKJD1013",
     "modelo": "Tênis Nike Air Jordan 1 Mid",
     "marca": "Nike",
@@ -133,7 +142,8 @@
     "preco": 1899.99,
     "descricao": "Inspirado no primeiro Air Jordan, o AJ1 Mid oferece aos fãs uma oportunidade de seguir os passos da grandeza. A unidade Air-Sole encapsulada amortece o jogo nas quadras, enquantidadeo o colarinho acolchoado oferece suporte."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "FILADI014",
     "modelo": "Tênis Fila Disruptor II",
     "marca": "Fila",
@@ -143,7 +153,8 @@
     "preco": 399.90,
     "descricao": "Com uma silhueta robusta e marcante, o Fila Disruptor II é um ícone da moda 'chunky'. Seu design arrojado e entressola espessa não só chamam a atenção, mas também garantem conforto a cada passo."
   },
-  {     "quantidade": 1,
+  {
+    "quantidade": 1,
     "cod_tenis": "SALXAU015",
     "modelo": "Tênis Salomon X Ultra 4 GTX",
     "marca": "Salomon",
